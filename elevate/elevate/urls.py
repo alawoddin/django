@@ -9,6 +9,6 @@ from django.urls import path ,  include
 urlpatterns = [
     
 
-    path('' , include('crm.crm.urls')),
+    path('' , include('crm.urls')),
     # path('demo' , demo)
 ]

@@ -9,7 +9,9 @@ def register(request):
 
 
 def home(request):
-    return HttpResponse("this is the home page")
+    # return HttpResponse("this is the home page")
+
+    return render(request, 'crm/index.html')
 
 def about(request):
     return HttpResponse("hello this is the about page page")
