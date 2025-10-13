@@ -14,4 +14,5 @@ def home(request):
     return render(request, 'crm/index.html')
 
 def about(request):
-    return HttpResponse("hello this is the about page page")
+    # return HttpResponse("hello this is the about page page")
+    return render(request , 'crm/about.html')
