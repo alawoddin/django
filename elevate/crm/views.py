@@ -9,10 +9,35 @@ def register(request):
 
 
 def home(request):
-    # return HttpResponse("this is the home page")
 
-    return render(request, 'crm/index.html')
+    context = {
+        'first_name' : 'alawoddin'
+    }
+
+    return render(request, 'crm/index.html' , context)
 
 def about(request):
-    # return HttpResponse("hello this is the about page page")
-    return render(request , 'crm/about.html')
+
+    clients = [
+        {
+            'id' : 1,
+            'name' : 'alawoddin',
+            'age' : 20
+        }
+    ]
+
+
+
+
+    return render(request , 'crm/about.html' , {'clients' : clients})
+
+
+def contact(request):
+
+
+    content = {
+        'first_name' : 'alawoddin',
+        
+    }
+
+    return render(request, 'crm/contact.html' , content)

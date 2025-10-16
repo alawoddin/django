@@ -1,0 +1,27 @@
+
+
+{% extends 'crm/base.html' %}
+
+<html>
+
+{% block content %}
+
+<h1>
+    the contact page
+</h1>
+
+{% if first_name == 'alawoddin'%}
+
+<p>
+    welcome {{first_name}}
+</p>
+ {% else %}
+<p>
+    access denied
+</p>
+{% endif %}
+
+{% endblock %}
+
+</html>
+
