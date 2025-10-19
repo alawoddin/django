@@ -12,11 +12,6 @@ urlpatterns = [
 
     path("contact", views.contact),
 
-    path('task' , views.task),
-
-    
-    path("review", views.review),
-
     path('register/' , views.register),
 
 ]
