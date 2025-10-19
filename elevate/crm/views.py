@@ -37,9 +37,12 @@ def about(request):
 
 def task(request):
 
-    queryDataAll = Task.objects.all()
+    # queryDataAll = Task.objects.all()
 
-    context = {'allTasks' : queryDataAll}
+    # context = {'allTasks' : queryDataAll}
+
+    queryDataSingle = Task.objects.get(id=4)
+    context = {'singleTask' : queryDataSingle}
 
     return render(request, 'crm/task.html' , context)
 

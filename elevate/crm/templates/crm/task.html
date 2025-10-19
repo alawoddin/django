@@ -9,7 +9,7 @@
 
 <hr>
 
-{% for task in allTasks %}
+{% comment %} {% for task in allTasks %}
 
 {{task.title}}
 
@@ -22,7 +22,15 @@
 {{task.created}}
 
 
-{% endfor %}
+{% endfor %} {% endcomment %}
+
+{% comment %} {{singleTask}} {% endcomment %}
+<p>this is your title {{singleTask.title}}</p>
+<br>
+{{singleTask.description}}
+<br>
+{{singleTask.created_at}}
+<br>
 
 {%endblock%}
 
