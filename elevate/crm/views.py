@@ -6,6 +6,8 @@ from django.http import HttpResponse
 
 from .models import Task
 
+from .forms import TaskForm
+
 from .models import Review
 
 def register(request):
@@ -65,5 +67,13 @@ def contact(request):
     }
 
     return render(request, 'crm/contact.html' , content)
+
+def task_form(request):
+
+    form = TaskForm()
+
+    context = {'TaskForm' : form}
+
+    return render(request, 'crm/task-form.html' , context )
 
 
