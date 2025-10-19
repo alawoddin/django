@@ -1,0 +1,5 @@
+Python
+Django
+Django Snippets
+Django Template
+Pylance
