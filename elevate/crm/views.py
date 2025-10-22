@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 
 
 
@@ -43,8 +43,12 @@ def task(request):
 
     # context = {'allTasks' : queryDataAll}
 
-    queryDataSingle = Task.objects.get(id=4)
-    context = {'singleTask' : queryDataSingle}
+    # queryDataSingle = Task.objects.get(id=4)
+    # context = {'singleTask' : queryDataSingle}
+
+    queryDataAll = Task.objects.all()
+
+    context = {'allTasks' : queryDataAll}
 
     return render(request, 'crm/task.html' , context)
 
@@ -68,12 +72,20 @@ def contact(request):
 
     return render(request, 'crm/contact.html' , content)
 
-def task_form(request):
+def create_task(request):
 
     form = TaskForm()
 
+
+    if request.method == 'POST':
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            return redirect('task')
+
     context = {'TaskForm' : form}
 
-    return render(request, 'crm/task-form.html' , context )
+    return render(request, 'crm/create-task.html' , context )
 
 

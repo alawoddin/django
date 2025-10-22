@@ -19,6 +19,6 @@ urlpatterns = [
 
     path('register/' , views.register , name='register'),
 
-    path('task-form/' , views.task_form , name='task-form'),
+    path('create-task' , views.create_task , name='create-task'),
 
 ]
