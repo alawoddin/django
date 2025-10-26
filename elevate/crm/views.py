@@ -52,6 +52,24 @@ def task(request):
 
     return render(request, 'crm/task.html' , context)
 
+def update_task(request , id):
+
+    taskobj = Task.objects.get(id=id)
+
+    form = TaskForm(instance=taskobj)
+
+
+    if request.method == 'POST':
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+
+            return redirect('task')
+
+    context = {'UpdateTask' : form}
+
+    return render(request, 'crm/update-task.html' , context )
+
 def review(request):
 
 
