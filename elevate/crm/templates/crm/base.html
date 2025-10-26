@@ -17,8 +17,20 @@
 </head>
 <body>
 
+      <h1> welcome to django crm </h1>
+
+    <a href="{% url 'create-task' %}"> create task </a>
+    <br>
+    <a href="{% url 'register' %}"> register </a>
+    <br>
+    <a href="{% url 'review' %}"> review </a>
+
     <!-- Page Content -->
-    {% block content %}{% endblock %}
+    {% block content %}
+
+  
+    
+    {% endblock %}
 
     
 
