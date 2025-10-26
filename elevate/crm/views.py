@@ -70,6 +70,20 @@ def update_task(request , id):
 
     return render(request, 'crm/update-task.html' , context )
 
+def delete_task(request , id):
+    
+    task = Task.objects.get(id=id)
+
+
+    if request.method == 'POST':
+        task.delete()
+
+        return redirect('task')
+
+    context = {'DeleteTask' : task}
+
+    return render(request, 'crm/delete-task.html' , context )
+
 def review(request):
 
 
