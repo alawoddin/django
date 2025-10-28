@@ -6,12 +6,25 @@ from django.http import HttpResponse
 
 from .models import Task
 
-from .forms import TaskForm
+from .forms import TaskForm, CreateUserForm
 
 from .models import Review
 
 def register(request):
-    return HttpResponse("this is for demo")
+
+    form = CreateUserForm()
+
+    if request.method == 'POST':
+        form = CreateUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("User Created") # or whatever url name you want
+
+    context = {'form': form}
+    return render(request, 'crm/register.html', context)
+
+
+
 
 
 def home(request):
