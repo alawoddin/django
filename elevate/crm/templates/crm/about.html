@@ -1,23 +1,15 @@
 {% extends "crm/base.html" %}
+{% load static %}
 
 {% block content %}
+  <h2>About Page</h2>
+  <p>This page is under development.</p>
 
+  <img src="{% static 'image/aura_bg.png' %}" alt="Aura background">
 
-<h2>About Page</h2>
-<p>This page is under development.</p>
-
-
-{% for client in clients %}
-
-
-<p>id {{client.id}}</p>
-<p>name {{client.name}}</p>
-<p>my {{client.age}}</p>
-
-
-{% endfor %}
-
-
-
-
+  {% for client in clients %}
+    <p>id {{ client.id }}</p>
+    <p>name {{ client.name }}</p>
+    <p>my {{ client.age }}</p>
+  {% endfor %}
 {% endblock %}
